@@ -1,0 +1,13 @@
+baseURL = "https://scottblayney.com/"
+locale = 'en-us'
+title = "Scott Blayney"
+theme = "PaperMod"
+
+[params]
+  author = "Scott Blayney"
+  description = "Aspiring DevOps Engineer"
+  defaultTheme = "dark"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
