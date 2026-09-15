@@ -3,11 +3,72 @@ locale = 'en-us'
 title = "Scott Blayney"
 theme = "PaperMod"
 
+# Home needs JSON for the search index (layouts/search.html consumes it).
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   author = "Scott Blayney"
   description = "Aspiring DevOps Engineer"
+  keywords = ["DevOps", "Kubernetes", "Homelab", "SRE", "Platform Engineering"]
   defaultTheme = "dark"
+
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowRssButtonInSectionTermList = true
+  ShowAllPagesInArchive = true
+  hideFooter = false
+
+  # Intro block on the homepage. Edit freely — this is drawn from your own posts.
+  [params.homeInfoParams]
+    Title = "Scott Blayney"
+    Content = """
+Aspiring DevOps engineer, roughly thirty years into a career that started with an
+MCSE and a spare machine running Windows Server in 1996.
+
+These days the spare machine is a 3-node k3s cluster on my desk, and I'm writing
+down what I learn on the way to Kubernetes certification.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/scottblayney"
+
+  [[params.socialIcons]]
+    name = "rss"
+    title = "RSS"
+    url = "/index.xml"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    threshold = 0.4
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "archive"
+    name = "Archive"
+    url = "/archives/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 40

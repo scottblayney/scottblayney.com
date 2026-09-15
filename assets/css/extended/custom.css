@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Custom theme layer for scottblayney.com
+   Loaded after PaperMod's own CSS (see themes/PaperMod/layouts/_partials/head.html).
+   Nothing in themes/ is modified, so PaperMod stays cleanly updatable.
+   ========================================================================== */
+
+/* --- Palette ------------------------------------------------------------ */
+
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 720px;
+    --header-height: 64px;
+    --footer-height: 60px;
+    --radius: 10px;
+
+    --theme: rgb(252, 252, 251);
+    --entry: rgb(255, 255, 255);
+    --primary: rgb(24, 28, 35);
+    --secondary: rgb(95, 104, 118);
+    --tertiary: rgb(216, 221, 228);
+    --content: rgb(44, 51, 62);
+    --code-block-bg: rgb(23, 26, 33);
+    --code-bg: rgb(241, 243, 246);
+    --border: rgb(230, 233, 238);
+
+    --accent: rgb(13, 134, 122);
+    --accent-soft: rgba(13, 134, 122, 0.10);
+
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono',
+        Menlo, Consolas, 'Liberation Mono', monospace;
+
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --theme: rgb(16, 18, 23);
+    --entry: rgb(24, 27, 34);
+    --primary: rgb(233, 237, 243);
+    --secondary: rgb(148, 158, 173);
+    --tertiary: rgb(52, 59, 71);
+    --content: rgb(203, 212, 224);
+    --code-block-bg: rgb(13, 15, 19);
+    --code-bg: rgb(32, 36, 45);
+    --border: rgb(38, 43, 53);
+
+    --accent: rgb(56, 201, 185);
+    --accent-soft: rgba(56, 201, 185, 0.12);
+
+    color-scheme: dark;
+}
+
+/* PaperMod tints list pages separately by default; keep one flat ground. */
+.list,
+[data-theme="dark"] .list {
+    background: var(--theme);
+}
+
+/* --- Typography --------------------------------------------------------- */
+
+body {
+    font-family: var(--font-sans);
+    background: var(--theme);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.021em;
+    font-weight: 650;
+}
+
+.post-content p,
+.post-content li {
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+code, kbd, pre, samp,
+.post-content code,
+.post-content pre {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
+}
+
+::selection {
+    background: var(--accent-soft);
+    color: var(--primary);
+}
+
+/* --- Header ------------------------------------------------------------- */
+
+.header {
+    border-bottom: 1px solid var(--border);
+    background: var(--theme);
+}
+
+.logo a {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.menu a {
+    font-weight: 500;
+    color: var(--secondary);
+    transition: color 0.15s ease;
+}
+
+.menu a:hover,
+.menu .active {
+    color: var(--primary);
+}
+
+.menu .active {
+    text-decoration-color: var(--accent);
+}
+
+/* --- Post cards on the list pages --------------------------------------- */
+
+.post-entry {
+    border: 1px solid var(--border);
+    background: var(--entry);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-entry:hover,
+.post-entry:focus-within {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 6px 24px -12px rgba(0, 0, 0, 0.35);
+}
+
+.entry-header h2 {
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+.post-entry:hover .entry-header h2 {
+    color: var(--accent);
+}
+
+.first-entry .entry-header h2,
+.first-entry .entry-header h1 {
+    letter-spacing: -0.028em;
+}
+
+/* Dates and reading time read as metadata, not prose. */
+.entry-footer,
+.post-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--secondary);
+}
+
+/* --- Single post -------------------------------------------------------- */
+
+.post-title {
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.post-content a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    transition: text-decoration-color 0.15s ease;
+}
+
+.post-content a:hover {
+    text-decoration-color: var(--accent);
+}
+
+.post-content blockquote {
+    border-inline-start: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 0.6em 1em;
+    font-style: normal;
+    color: var(--content);
+}
+
+.post-content :not(pre) > code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 0.87em;
+    padding: 0.12em 0.38em;
+}
+
+.post-content pre {
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.post-content hr {
+    border-top: 1px solid var(--border);
+}
+
+.post-content table th {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+}
+
+/* --- Tags --------------------------------------------------------------- */
+
+.post-tags a,
+.terms-tags a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 4px 12px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+    border-color: var(--accent);
+    background: transparent;
+}
+
+/* --- Homepage intro ----------------------------------------------------- */
+
+.home-info .entry-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--content);
+}
+
+.first-entry {
+    min-height: auto;
+    margin-bottom: calc(var(--gap) * 1.5);
+    padding-bottom: var(--gap);
+    border-bottom: 1px solid var(--border);
+}
+
+/* --- Footer and misc ---------------------------------------------------- */
+
+.footer {
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--secondary);
+}
+
+.footer a {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--tertiary);
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+.top-link {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+}
+
+.pagination .page-link {
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+/* Visible focus for keyboard users — PaperMod leaves this to the browser. */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post-entry:hover,
+    .post-entry:focus-within {
+        transform: none;
+    }
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}

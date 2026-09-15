@@ -1,3 +1,11 @@
++++
+date = '2026-07-01T20:15:50-07:00'
+title = 'My Experience with Homelabs'
+description = 'Thirty years on, the homelab is still the fastest way I know to learn something new.'
+tags = ['Homelab', 'Career', 'Kubernetes', 'k3s']
+draft = false
++++
+
 Back in 1996 I went back to school to learn the latest in-demand skills. Best decision of my career.  
   
 Internet access wasn't a given yet, so after commuting home from class I'd get on my own computer and practice what I'd just learned. Bought a new machine, installed Windows Server, got to work.  
