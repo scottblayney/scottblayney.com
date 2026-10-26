@@ -9,7 +9,7 @@ theme = "PaperMod"
 
 [params]
   author = "Scott Blayney"
-  description = "Aspiring DevOps Engineer"
+  description = "Senior Systems Administrator and DevOps Engineer"
   keywords = ["DevOps", "Kubernetes", "Homelab", "SRE", "Platform Engineering"]
   defaultTheme = "dark"
 
@@ -27,11 +27,13 @@ theme = "PaperMod"
   [params.homeInfoParams]
     Title = "Scott Blayney"
     Content = """
-Aspiring DevOps engineer, roughly thirty years into a career that started with an
-MCSE and a spare machine running Windows Server in 1996.
+I went back to school in 1996, earned my Microsoft MCSE and Lotus PCLP Admin
+certs, and landed my first IT job. Every time I needed to learn something new, I'd
+practice on a machine at home first.
 
-These days the spare machine is a 3-node k3s cluster on my desk, and I'm writing
-down what I learn on the way to Kubernetes certification.
+Almost thirty years later I'm still doing it. Today I'm a Senior Systems Administrator
+and DevOps Engineer, and the home machine is now a 3-node k3s cluster on my desk where
+I work toward Kubernetes certifications. This is where I write down what I learn along the way.
 """
 
   [[params.socialIcons]]
