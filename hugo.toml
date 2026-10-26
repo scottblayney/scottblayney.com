@@ -42,6 +42,11 @@ I work toward Kubernetes certifications. This is where I write down what I learn
     url = "https://github.com/scottblayney"
 
   [[params.socialIcons]]
+    name = "linkedin"
+    title = "LinkedIn"
+    url = "https://www.linkedin.com/in/scottblayney/"
+
+  [[params.socialIcons]]
     name = "rss"
     title = "RSS"
     url = "/index.xml"
