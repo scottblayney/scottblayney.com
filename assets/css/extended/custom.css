@@ -321,3 +321,4 @@ button:focus-visible {
 }
 .contact-form button:disabled { opacity: .6; cursor: wait; }
 .contact-form .hp { position: absolute; left: -10000px; height: 0; overflow: hidden; }
+.contact-status:not(:empty) { font-weight: 500; margin: 1rem 0; }

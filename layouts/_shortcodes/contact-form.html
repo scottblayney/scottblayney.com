@@ -17,8 +17,8 @@
   </div>
   <div class="cf-turnstile" data-sitekey="{{ $siteKey }}"></div>
   <button type="submit">Send message</button>
-  <p id="contact-status" role="status" aria-live="polite"></p>
 </form>
+<p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   const form = document.getElementById("contact-form");
