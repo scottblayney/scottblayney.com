@@ -71,7 +71,7 @@ async function handleContact(request, env) {
 
   const raw = [
     `From: Website Contact Form <${env.FROM_ADDRESS}>`,
-    `To: scott@scottblayney.com`,
+    `To: ${env.TO_ADDRESS}`,
     `Reply-To: ${email}`,
     `Subject: =?UTF-8?B?${btoa(String.fromCharCode(...new TextEncoder().encode(subject)))}?=`,
     `Date: ${new Date().toUTCString()}`,
@@ -84,7 +84,7 @@ async function handleContact(request, env) {
   ].join("\r\n");
 
   try {
-    await env.EMAIL.send(new EmailMessage(env.FROM_ADDRESS, "scott@scottblayney.com", raw));
+    await env.EMAIL.send(new EmailMessage(env.FROM_ADDRESS, env.TO_ADDRESS, raw));
   } catch (err) {
     console.error("send failed", err);
     return json({ error: "Sorry, your message could not be sent. Please try again later." }, 500);

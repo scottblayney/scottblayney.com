@@ -13,11 +13,13 @@
     {
       "name": "EMAIL",
       // Only this verified Email Routing address can receive form messages.
-      "destination_address": "scott@scottblayney.com"
+      "destination_address": "scottblayney@proton.me"
     }
   ],
   "vars": {
     // Must be an address on a domain with Email Routing enabled.
-    "FROM_ADDRESS": "website@scottblayney.com"
+    "FROM_ADDRESS": "website@scottblayney.com",
+    // Must match the verified destination address above.
+    "TO_ADDRESS": "scottblayney@proton.me"
   }
 }
