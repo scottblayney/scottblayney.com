@@ -292,3 +292,32 @@ button:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* --- Contact form ------------------------------------------------------- */
+
+.contact-form { display: grid; gap: 1rem; margin: 1.5rem 0; }
+.contact-form label { display: grid; gap: .35rem; font-weight: 500; }
+.contact-form input,
+.contact-form textarea {
+    font: inherit;
+    padding: .6rem .75rem;
+    color: var(--primary);
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.contact-form button {
+    justify-self: start;
+    font: inherit;
+    font-weight: 600;
+    padding: .6rem 1.4rem;
+    color: #fff;
+    background: var(--accent);
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.contact-form button:disabled { opacity: .6; cursor: wait; }
+.contact-form .hp { position: absolute; left: -10000px; height: 0; overflow: hidden; }

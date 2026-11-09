@@ -1,8 +1,23 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "scottblayney-com",
+  "main": "src/worker.js",
   "compatibility_date": "2026-08-20",
   "assets": {
-    "directory": "public"
+    "directory": "public",
+    "binding": "ASSETS",
+    // Only /api/* hits the Worker; everything else is served as static files.
+    "run_worker_first": ["/api/*"]
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      // Only this verified Email Routing address can receive form messages.
+      "destination_address": "scott@scottblayney.com"
+    }
+  ],
+  "vars": {
+    // Must be an address on a domain with Email Routing enabled.
+    "FROM_ADDRESS": "website@scottblayney.com"
   }
 }

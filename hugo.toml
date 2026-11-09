@@ -13,6 +13,9 @@ theme = "PaperMod"
   keywords = ["DevOps", "Kubernetes", "Homelab", "SRE", "Platform Engineering"]
   defaultTheme = "dark"
 
+  # Public Cloudflare Turnstile site key (safe to commit). Secret key is a Worker secret.
+  turnstileSiteKey = "0x4AAAAAAF5TNgCqZLyrERd9"
+
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
@@ -64,6 +67,11 @@ I work toward Kubernetes certifications. This is where I write down what I learn
     name = "Posts"
     url = "/posts/"
     weight = 10
+  [[menu.main]]
+    identifier = "services"
+    name = "IT Services"
+    url = "/services/"
+    weight = 15
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
