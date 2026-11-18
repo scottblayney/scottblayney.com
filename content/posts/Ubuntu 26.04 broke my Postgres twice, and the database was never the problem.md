@@ -1,3 +1,11 @@
++++
+date = '2026-11-17T20:17:11-07:00'
+title = 'Ubuntu 26.04 Broke My Postgres Twice, and the Database Was Never the Problem'
+description = 'A stacked AppArmor profile on Ubuntu 26.04 blocked the signal Postgres uses to wake its own processes, and it hung two databases in my k3s cluster. What I saw, what fixed it, and what I have not verified.'
+tags = ['Homelab', 'Kubernetes', 'k3s', 'Postgres', 'AppArmor', 'Ubuntu']
+draft = false
++++
+
 I run a four-node k3s cluster at home. I upgraded one worker from Ubuntu 24.04 to 26.04, and over the next two weeks two different Postgres databases hung on it. Both times the data was fine. A blocked signal was the problem, and the only evidence was a line in the node's kernel log.
 
 A note on how I worked. I used Claude Code for both investigations: it ran the read-only `kubectl` and log checks, wrote the fix as a pull request, and helped me write this post. I reviewed and merged the change, and I ran the recovery steps (deleting the pod, scaling Immich back up). Where something below is inferred and not confirmed, I say so, and there's a list at the end.
