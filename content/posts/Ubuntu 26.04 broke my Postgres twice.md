@@ -1,5 +1,3 @@
-#draft #blog 
-
 # Ubuntu 26.04 broke my Postgres twice, and the database was never the problem
 
 I run a four-node k3s cluster at home. I upgraded one worker from Ubuntu 24.04 to 26.04, and over the next two weeks two different Postgres databases hung on it. Both times the data was fine. A blocked signal was the problem, and the only evidence was a line in the node's kernel log.
